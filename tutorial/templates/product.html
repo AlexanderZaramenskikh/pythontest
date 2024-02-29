@@ -1,0 +1,14 @@
+{% extends 'flatpages/default.html' %}
+
+
+{% block title %}
+Product
+{% endblock title %}
+
+
+{% block content %}
+<h1>Цена: {{ product.price }}</h1>
+<h1>Курс: {{ product.product_name }}</h1>
+<h1>Старт: {{ product.start_date }}</h1>
+<h1>Уроков: {{ product.count }}</h1>
+{% endblock content %}

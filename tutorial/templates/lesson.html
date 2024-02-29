@@ -1,0 +1,25 @@
+{% extends 'flatpages/default.html' %}
+
+
+{% block title %}
+Lesson, Product
+{% endblock title %}
+
+
+{% block content %}
+{% if lesson %}
+       <table>
+           <tr>
+           </tr>
+           {% for lesson in lesson %}
+           <tr>
+               <td><h1>{{ lesson.product_name }}<h1></td>
+               <td><h1>{{ lesson.url }}<h1></td>
+           </tr>
+           {% endfor %}
+
+       </table>
+   {% else %}
+       <h2>Новостей нет!</h2>
+   {% endif %}
+{% endblock content %}

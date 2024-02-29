@@ -1,0 +1,31 @@
+{% extends 'flatpages/default.html' %}
+
+
+{% block title %}
+Product
+{% endblock title %}
+
+
+{% block content %}
+{% if product %}
+       <table>
+           <tr>
+               <td><h1>Название<h1></td>
+               <td><h1>Дата<h1></td>
+               <td><h1>Цена<h1></td>
+           </tr>
+           {% for product in product %}
+           <tr>
+               <td><h3>{{ product.product_name }}<h3></td>
+               <td><h3>&nbsp|&nbsp{{ product.start_date }}&nbsp|&nbsp<h3></td>
+               <td><h3>&nbsp{{ product.price }}<h3></td>
+           </tr>
+           {% endfor %}
+
+       </table>
+   {% else %}
+       <h2>Новостей нет!</h2>
+   {% endif %}
+{% endblock content %}
+
+
