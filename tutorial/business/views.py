@@ -20,3 +20,5 @@ class LessonList(ListView):
     ordering = 'product_name'
     template_name = 'lesson.html'
     context_object_name = 'lesson'
+
+

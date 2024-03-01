@@ -2,9 +2,9 @@ from django.db import models
 from datetime import datetime
 import sqlite3
 
+
 connect = sqlite3.connect("db.sqlite3")
 cursor = connect.cursor()
-
 
 
 class Product(models.Model):
@@ -17,7 +17,6 @@ class Product(models.Model):
     count = cursor.fetchone()[0]
     cursor.execute("SELECT COUNT(*) FROM business_lesson WHERE product_id = 2")
     count1 = cursor.fetchone()[0]
-
 
 
 class Lesson(models.Model):
@@ -40,4 +39,9 @@ class Student(models.Model):
     name = models.CharField(max_length=200)
     balance = models.IntegerField(default=0)
     access = models.BooleanField(default=False)
-    product_id = models.ForeignKey(Product,on_delete=models.CASCADE)
+    product_id = models.ForeignKey(Product,on_delete=models.CASCADE,default=0)
+
+
+
+
+
